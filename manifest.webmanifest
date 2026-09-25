@@ -1,0 +1,16 @@
+{
+  "name": "Rolnik AI",
+  "short_name": "Rolnik AI",
+  "description": "Inteligentny panel gospodarstwa do rejestracji prac polowych i zabiegów",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#16351f",
+  "theme_color": "#16351f",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml"
+    }
+  ]
+}
