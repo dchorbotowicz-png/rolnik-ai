@@ -1,0 +1,9 @@
+{
+  "name": "Rolnik AI",
+  "description": "Inteligentny panel gospodarstwa do szybkiej rejestracji prac polowych, zabiegów, działek, maszyn i kosztów.",
+  "prompt": "Rolnik AI - Panel gospodarstwa",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

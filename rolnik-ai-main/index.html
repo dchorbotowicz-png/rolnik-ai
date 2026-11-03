@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#16351f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+<title>Rolnik AI</title>
+<meta name="description" content="Inteligentny panel gospodarstwa do szybkiej rejestracji prac polowych, zabiegów, działek, maszyn i kosztów.">
+<meta property="og:title" content="Rolnik AI">
+<meta property="og:description" content="Inteligentny panel gospodarstwa do szybkiej rejestracji prac polowych, zabiegów, działek, maszyn i kosztów.">
+</head>
+<body>
+<div id="app">
+<header class="topbar"><div><div class="brand">Rolnik <span>AI</span></div><div class="sub">Panel gospodarstwa</div></div><button id="installBtn" class="ghost hidden">Zainstaluj</button></header>
+<main>
+<section id="home" class="screen active">
+  <div class="homeHero">
+    <div class="eyebrow">DZISIAJ</div>
+    <h1>Co zrobiłeś<br>na gospodarstwie?</h1>
+    <p class="heroText">Powiedz po prostu, co zrobiłeś. Rolnik AI uporządkuje dane i przygotuje wpis do zatwierdzenia.</p>
+    <button id="micBtn" class="mic"><span class="micIcon">🎙️</span><span id="micLabel">Powiedz, co dzisiaj zrobiłeś</span></button>
+  </div>
+  <div id="liveTranscript" class="transcript hidden"></div>
+  <div class="quickTitle"><b>Najważniejsze</b><span>resztę znajdziesz w menu</span></div>
+  <div class="quick-grid">
+    <button data-nav="fields"><span class="quickIcon">📍</span><span><b>Działki</b><small>uprawy i areały</small></span></button>
+    <button data-nav="history"><span class="quickIcon">📋</span><span><b>Historia</b><small>ostatnie prace</small></span></button>
+  </div>
+  <div class="stats"><div><strong id="todayCount">0</strong><span>dzisiejsze wpisy</span></div><div><strong id="fieldCount">0</strong><span>działki</span></div><div><strong id="areaCount">0 ha</strong><span>łączny areał</span></div></div>
+</section>
+<section id="history" class="screen"><div class="sectionHead"><div><div class="eyebrow">DOKUMENTACJA</div><h2>Historia</h2></div><button class="round" id="clearHistory">×</button></div><div id="historyList" class="list"></div></section>
+<section id="fields" class="screen"><div class="sectionHead"><div><div class="eyebrow">GOSPODARSTWO</div><h2>Działki</h2></div><button class="add" id="addField">+ Dodaj</button></div><div id="fieldList" class="list"></div></section>
+<section id="machines" class="screen"><div class="sectionHead"><div><div class="eyebrow">SPRZĘT</div><h2>Maszyny</h2></div><button class="add" id="addMachine">+ Dodaj</button></div><div id="machineList" class="list"></div></section>
+<section id="treatments" class="screen"><div class="sectionHead"><div><div class="eyebrow">ŚRODKI</div><h2>Zabiegi</h2></div></div><div class="card"><b>Rejestr zabiegów</b><p>Wpisy głosowe dotyczące oprysków, nawożenia i innych zabiegów będą automatycznie trafiały tutaj.</p></div></section>
+<section id="costs" class="screen"><div class="sectionHead"><div><div class="eyebrow">FINANSE</div><h2>Koszty</h2></div></div><div id="costList" class="list"></div></section>
+</main>
+<nav class="bottom"><button data-nav="home" class="active">⌂<span>Start</span></button><button data-nav="fields">▦<span>Działki</span></button><button data-nav="history">☷<span>Historia</span></button><button data-nav="costs">€<span>Koszty</span></button></nav>
+<div id="modal" class="modal hidden"><div class="sheet"><div class="sheetHandle"></div><h2>Sprawdź wpis</h2><p class="muted">AI przygotował dane. Popraw je przed zapisaniem.</p><div id="parsedForm"></div><div class="actions"><button id="cancelModal" class="secondary">Anuluj</button><button id="saveEntry" class="primary">✓ Zapisz wpis</button></div></div></div>
+<div id="toast" class="toast"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
